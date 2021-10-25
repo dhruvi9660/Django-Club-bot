@@ -46,7 +46,7 @@
        
           <header class="masthead">
             <div class="container">
-                <div class="masthead-subheading">Register here!</div>
+                <div class="masthead-subheading">Login here!</div>
                 
                 
             </div>
@@ -61,13 +61,13 @@
                         <legend class="border-bottom mb-4" align='center'>Join Today</legend>
                         {{ form|crispy }}
                     </fieldset>
-                    <div class="form-group">
-                        <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                    <div class="form-group"><br>
+                        <button class="btn btn-outline-info" type="submit">Sign In</button>
                     </div>
                 </form>
                 <div class="border-top pt-3">
-                    <small class="text-muted">
-                        Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+                    <small class="text-muted"><br>
+                        Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign up</a>
                     </small>
                 </div>
             </div>
