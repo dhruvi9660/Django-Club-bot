@@ -1,0 +1,106 @@
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Club-Bot</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static '../static/css/styles.css'%}" rel="stylesheet" />
+    </head>
+    <body id="page-top" style="background-img: url({% static '../static/assets/img/menupage.png' %});">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="{% static '../static/assets/img/navbar-logo.svg' %}" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="../index/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="register/">Register</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index/">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index/">Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index/">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        
+        <header class="masthead" style="background-image: url({% static '../static/assets/img/menupage.jpg' %});" >
+            <div class="container">
+                <div style="background: lightblue; 
+            font-size: 20px; 
+            padding: 10px; 
+            border: 1px solid lightgray; 
+            margin: 10px;
+            color: black;">
+Choose from a wide range of services with flexible plans and attractive prices
+</div>
+              
+               <br>
+               <br>
+               <table style=" font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;">
+               <tr>
+               <td>
+               <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static '../static/assets/img/swimmingpoolmenu.jpg' %}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    
+    <a href="#" class="btn btn-primary">Swimming Pool Services</a>
+  </div>
+</div></td>
+    <td><div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static '../static/assets/img/gymmenu.jpg' %}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    
+    <a href="#" class="btn btn-primary">Gym Services</a>
+  </div>
+</div></td>
+    <td><div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static '../static/assets/img/partymenu.jpg' %}"" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    
+    <a href="#" class="btn btn-primary">Club / Parties Banquet Hall</a>
+  </div>
+</div></td>
+               </tr>
+               </table>
+            </div>
+        </header>
+  
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static '../static/js/scripts.js' %}"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
+

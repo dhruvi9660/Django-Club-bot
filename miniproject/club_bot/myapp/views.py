@@ -17,5 +17,8 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'myapp/register.html', {'form': form})
+
+def menupage(request):
+    return render(request, 'myapp/menupage.html')
 # Create your views here.
 
