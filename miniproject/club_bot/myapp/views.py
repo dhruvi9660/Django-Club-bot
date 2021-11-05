@@ -22,3 +22,6 @@ def menupage(request):
     return render(request, 'myapp/menupage.html')
 # Create your views here.
 
+def swimmingplan(request):
+    return render(request, 'myapp/swimmingplan.html')
+

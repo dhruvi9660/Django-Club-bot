@@ -45,50 +45,81 @@
         </nav>
         <!-- Masthead-->
         
-        <header class="masthead" style="background-image: url({% static '../static/assets/img/menupage.jpg' %});" >
+        <header class="masthead" style="background-image: url({% static '../static/assets/img/newerocean.jpg' %});" >
             <div class="container">
-                <div style="background: lightblue; 
+                <div style="background: darkblue; 
             font-size: 20px; 
             padding: 10px; 
             border: 1px solid lightgray; 
             margin: 10px;
-            color: black;">
-Choose from a wide range of services with flexible plans and attractive prices
+            color: white;">
+Family Plans
 </div>
               
                <br>
                <br>
                <table style=" font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;">
+  width: 100%; margin-left: 120px;">
                <tr>
-               <td>
-               <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{% static '../static/assets/img/swimmingpoolmenu.jpg' %}" alt="Card image cap">
+               
+    <td><div class="card" style="width: 18rem; background-color:lightblue">
+  <img class="card-img-top" src="{% static '../static/assets/img/famwittrain.jpg' %}" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    
-    <a href="{% url 'swimmingplan' %}" class="btn btn-primary">Swimming Pool Services</a>
+    <h3 class="card-title" style="color:darkblue">Monthly Plan</h3>
+    <p style="color:black"> Monthly Plan for family . Rupees 300 per month. Choose your timings.</p>
+    <a href="#" class="btn btn-primary">Add to Cart</a>
   </div>
 </div></td>
-    <td><div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{% static '../static/assets/img/gymmenu.jpg' %}" alt="Card image cap">
+    <td><div class="card" style="width: 18rem; background-color:lightblue">
+  <img class="card-img-top" src="{% static '../static/assets/img/familyearly.jpg' %}" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    
-    <a href="#" class="btn btn-primary">Gym Services</a>
-  </div>
-</div></td>
-    <td><div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{% static '../static/assets/img/partymenu.jpg' %}"" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    
-    <a href="#" class="btn btn-primary">Club / Parties Banquet Hall</a>
+    <h3 class="card-title" style="color:darkblue">Yearly Plan</h3>
+    <p style="color:black"> Yearly Plan for family . Rupees 3000 per year. Choose your timings. Trainer Included</p>
+    <a href="#" class="btn btn-primary">Add to Cart</a>
   </div>
 </div></td>
                </tr>
                </table>
+            </div>
+             <div class="container" style = "margin-top:50px;">
+                <div style="background: darkblue; 
+            font-size: 20px; 
+            padding: 10px; 
+            border: 1px solid lightgray; 
+            margin: 10px;
+            color: white;">
+Individual and Kids Plans
+</div>
+<br>
+<br>
+<table style=" font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%; margin-left: 120px;">
+               <tr>
+               
+    <td><div class="card" style="width: 18rem; background-color:lightblue">
+  <img class="card-img-top" src="{% static '../static/assets/img/swimmer-carousel.jpg' %}" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title" style="color:darkblue">Monthly Plan</h3>
+    <p style="color:black"> Monthly Plan for Individual Adult . Rupees 450 per month. Choose your timings.</p>
+    <a href="#" class="btn btn-primary">Add to Cart</a>
+  </div>
+</div></td>
+    <td><div class="card" style="width: 18rem; background-color:lightblue">
+  <img class="card-img-top" src="{% static '../static/assets/img/kidswim.jpg' %}" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title" style="color:darkblue">Kids Plan</h3>
+    <p style="color:black"> Teach your little ones how to swim. Trainer Included . Rupees 350 per month</p>
+    <a href="#" class="btn btn-primary">Add to Cart</a>
+  </div>
+</div></td>
+               </tr>
+               </table>
+              
+               <br>
+               <br>
+               
             </div>
         </header>
   
@@ -103,4 +134,3 @@ Choose from a wide range of services with flexible plans and attractive prices
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
-
