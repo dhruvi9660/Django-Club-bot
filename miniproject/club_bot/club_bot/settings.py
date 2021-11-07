@@ -118,6 +118,7 @@ USE_L10N = True
 USE_TZ = True
 
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -127,3 +128,9 @@ STATICFILES_DIRS=[STATIC_DIR,]
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_HOST= 'smtp.gmail.com'
+EMAIL_HOST_USER= 'clubbot102@gmail.com'
+EMAIL_HOST_PASSWORD= 'clubbot!11'
+EMAIL_USE_TLS= True
+EMAIL_PORT= 587
