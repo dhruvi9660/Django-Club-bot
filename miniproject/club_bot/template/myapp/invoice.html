@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+</head>
+<body>
+{% block content%}
+
+ <section>
+   <div class="row">
+    <h1>Invoice</h1><hr>
+    <table class="table table-hover table-bordered ">
+        <tr >
+          <th align="left">no.</th>
+          <th align="left">Item</th>
+          <th align="left">Price</th>
+        </tr>
+        {% for item in order.get_cart_items %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>
+              {{ item.product.name }}
+              
+            </td>
+            <td>{{ item.product.price }}</td>
+          </tr>
+        
+        {% endfor %}
+        <tr>
+          {% if order.get_cart_total != None %}
+          <td colspan=2>
+            <strong class="pull-right">Order Total:</strong>
+          </td>
+          
+          <td colspan= 1>
+            <strong>{{ order.get_cart_total }}</strong>
+          </td>
+          {% endif %}
+        </tr></table>
+
+
+</div></section>
+      {% endblock %}
+</body>
+</html>

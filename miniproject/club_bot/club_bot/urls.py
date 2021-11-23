@@ -23,14 +23,23 @@ from django.conf.urls.static import static
 from myapp import views as user_views
 
 urlpatterns=[ url(r'^$',user_views.index,name='index'),
+path('profile/', user_views.profile, name='profile'),
 path('register/',user_views.register,name='register'),
 path('login/', auth_views.LoginView.as_view(template_name='myapp/login.html'), name='login'),
 path('logout/', auth_views.LogoutView.as_view(template_name='myapp/logout.html'), name='logout'),
 path('menupage/',user_views.menupage,name='menupage'),
-path('swimmingplan/',user_views.swimmingplan,name='swimmingplan'),
+path('swimmingplan/',user_views.swimmingplan,name='swimmingplann'),
 path('contact/',user_views.contact,name='contact'),
- path('', include('myapp.urls')),
+path('product_list/',user_views.product_list,name='product-list'),
+path('order_summary/',user_views.order_details,name='order_summary'),
+path('add_to_cart/(?P<item_id>[-\w]+)/$',user_views.add_to_cart,name='add_to_cart'),
+url('^item/delete/(?P<item_id>[-\w]+)/$',user_views.delete_from_cart,name='delete_item'),
+path('add_to_cart/(?P<item_id>[-\w]+)/$',user_views.add_to_cart,name='add_to_cart'),
+path('checkout/',user_views.order_details1,name='checkout'),
+path('invoice/', user_views.GeneratePdf.as_view(),name='invoice'),
+path('', include('myapp.urls')),
 path('admin/', admin.site.urls), 
 
 ]
 
+urlpatterns = urlpatterns + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT )
