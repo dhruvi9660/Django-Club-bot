@@ -1,20 +1,26 @@
 
 <!DOCTYPE html>
+{% load static %}
 <head>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  
+    <link href="{% static '../static/css/styles.css'%}" rel="stylesheet" />
 </head>
-<body>
+<body >
+
+  <header  style="background-image: url({% static '../static/assets/img/lightblue.jpg' %}); " >
+ <h2 style="margin-left:510px;">Choose Your Plans </h2> 
 {% block content %}
     {{ message }}
-    <div class="row container">
+    <div class="row" style="margin-left:500px;" >
     {% for object in object_list %}
-        <div class="col-sm-3">
-            <img src="{{object.product_img.url}}" alt="hi">
-            <p>{{ object.name }}</p>
-            <p>Price: ${{ object.price }}</p>
-            {% if object in user.profile.ebooks.all %}
+        <div class="row" >
+            <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{object.product_img.url}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title" style="color:black">{{ object.name }}</h5>
+    <p class="card-text" style="color:black">Price: ${{ object.price }}</p>
+     {% if object in user.profile.ebooks.all %}
              add a button here to see the product 
             You own this
             {% elif object in current_order_products %}
@@ -22,9 +28,13 @@
             {% else %}
             <a href="{% url 'add_to_cart' object.id %}" class="btn btn-warning">Add to Cart</a>
             {% endif %}
-        </div>
-    {% endfor %}
+  </div>
+   {% endfor %}
+</div>
     </div>
 {% endblock content %}
+</header>
 </body>
 </html>
+
+
