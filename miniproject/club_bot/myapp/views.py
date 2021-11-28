@@ -10,7 +10,7 @@ from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 #from shopping_cart.models import Order
-from .models import Product
+from .models import Gym, Order_occasion, OrderItem_occasion, Product, occasion, Order_gym
 from .models import Order
 from .models import Profile
 from .models import OrderItem, Order, Transaction
@@ -19,6 +19,7 @@ import random
 import string
 from datetime import date
 import datetime
+from myapp.forms import occasionForm
 
 
 
@@ -199,5 +200,76 @@ class GeneratePdf(View):
         pdf = render_to_pdf('myapp/invoice.html',context)
          
          #rendering the template
-        return HttpResponse(pdf, content_type='application/pdf')
+        return HttpResponse(pdf, content_type='application/pdf')    
+
+@login_required
+def occ_form(request):
+    form1  = occasionForm()
+
+    if request.method == 'POST':
+        form1 = occasionForm(request.POST)
+        if form1.is_valid:
+            form1.save()
+    return render(request,'myapp/occasion_details.html',{'form':form1})
     
+    
+
+@login_required
+def occasion_product(request):
+    object_list = occasion.objects.all()
+    filtered_orders = Order.objects.filter(owner=request.user.profile, is_ordered=False)
+    current_order_products = []
+    if filtered_orders.exists():
+    	user_order = filtered_orders[0]
+    	user_order_items = user_order.items.all()
+    	current_order_products = [product.product for product in user_order_items]
+
+    context = {
+        'object_list': object_list,
+        'current_order_products': current_order_products
+    }
+
+    return render(request, "myapp/occasion_product.html", context)
+
+@login_required()
+def add_to_cart_occasion(request, **kwargs):
+    # get the user profile
+    user_profile = get_object_or_404(Profile, user=request.user)
+    # filter products by id
+    product1 = occasion.objects.filter(id=kwargs.get('item_id', "")).first()
+    # check if the user already owns this product
+    if product1 in request.user.profile.ebooks.all():
+        messages.info(request, 'You already own this ebook')
+        return redirect(reverse('occasion_product')) 
+    # create orderItem of the selected product
+    order_item, status = OrderItem_occasion.objects.get_or_create(product=product1)
+    # create order associated with the user
+    user_order, status = Order_occasion.objects.get_or_create(owner=user_profile, is_ordered=False)
+    user_order.items.add(order_item)
+    if status:
+        # generate a reference code
+        user_order.ref_code = generate_order_id()
+        user_order.save()
+
+    # show confirmation message and redirect back to the same page
+    messages.info(request, "item added to cart")
+    return redirect(reverse('occasion_product'))
+
+
+#gymming service
+@login_required
+def gym_product(request):
+    object_list = Gym.objects.all()
+    filtered_orders = Order_gym.objects.filter(owner=request.user.profile, is_ordered=False)
+    current_order_products = []
+    if filtered_orders.exists():
+    	user_order = filtered_orders[0]
+    	user_order_items = user_order.items.all()
+    	current_order_products = [product.product for product in user_order_items]
+
+    context = {
+        'object_list': object_list,
+        'current_order_products': current_order_products
+    }
+
+    return render(request, "myapp/gym_product.html", context)

@@ -9,10 +9,11 @@
 <body >
 
   <header  style="background-image: url({% static '../static/assets/img/lightblue.jpg' %}); " >
- <h2 style="margin-left:510px;">Choose Your Plans </h2> 
+ <h2 align="center" class="display-2">Choose Your Plans </h2> <br>
 {% block content %}
     {{ message }}
-    <div class="row" style="margin-left:500px;" >
+    <div class="container">
+    <div class="row" style="margin-left: 500px;"    >
     {% for object in object_list %}
         <div class="row" >
             <div class="card" style="width: 18rem;">
@@ -28,9 +29,10 @@
             {% else %}
             <a href="{% url 'add_to_cart' object.id %}" class="btn btn-warning">Add to Cart</a>
             {% endif %}
+        
   </div>
    {% endfor %}
-</div>
+</div></div>
     </div>
 {% endblock content %}
 </header>

@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.forms import ModelForm
+from .models import occasion, occasion_details
 
 
 class UserRegisterForm(UserCreationForm):
@@ -10,7 +12,11 @@ class UserRegisterForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
-
+class occasionForm(ModelForm):
+    class Meta:
+        model = occasion_details
+        fields = ['occasion_name','time_slot','occasion_description','date']
+        
 
 
 

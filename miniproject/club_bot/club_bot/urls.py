@@ -36,7 +36,11 @@ path('add_to_cart/(?P<item_id>[-\w]+)/$',user_views.add_to_cart,name='add_to_car
 url('^item/delete/(?P<item_id>[-\w]+)/$',user_views.delete_from_cart,name='delete_item'),
 path('add_to_cart/(?P<item_id>[-\w]+)/$',user_views.add_to_cart,name='add_to_cart'),
 path('checkout/',user_views.order_details1,name='checkout'),
-path('invoice/', user_views.GeneratePdf.as_view(),name='invoice'),
+path('occasion_details/',user_views.occ_form,name='occasion_details'),
+path('occasion_product/',user_views.occasion_product,name='occasion_product'),
+path('invoice/',user_views.GeneratePdf.as_view(),name='invoice'),
+path('gym_product/',user_views.gym_product,name='gym_product'),
+path('add_to_cart_occasion/(?P<item_id>[-\w]+)/$',user_views.add_to_cart_occasion,name='add_to_cart_occasion'),
 path('', include('myapp.urls')),
 path('admin/', admin.site.urls), 
 
