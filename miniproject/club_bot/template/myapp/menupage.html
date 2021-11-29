@@ -34,11 +34,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="../index/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="register/">Register</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index/">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index/">Team</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index/">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -76,7 +76,7 @@ Choose from a wide range of services with flexible plans and attractive prices
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     
-    <a href="#" class="btn btn-primary">Gym Services</a>
+    <a href="{% url 'gym_product' %}" class="btn btn-primary">Gym Services</a>
   </div>
 </div></td>
     <td><div class="card" style="width: 18rem;">
@@ -84,7 +84,7 @@ Choose from a wide range of services with flexible plans and attractive prices
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     
-    <a href="#" class="btn btn-primary">Club / Parties Banquet Hall</a>
+    <a href="{% url 'occasion_product' %}" class="btn btn-primary">Club / Parties Banquet Hall</a>
   </div>
 </div></td>
                </tr>

@@ -9,11 +9,11 @@
 <body >
 
   <header  style="background-image: url({% static '../static/assets/img/lightblue.jpg' %}); " >
- <h2 align="center" class="display-2">Choose Your Plans </h2> <br>
+ <h2 style="margin-left:350px;" class="display-2">Choose Your Plans </h2> <br>
 {% block content %}
     {{ message }}
     <div class="container">
-    <div class="row" style="margin-left: 500px;"    >
+    <div class="row" style="margin-left: 400px;"    >
     {% for object in object_list %}
         <div class="row" >
             <div class="card" style="width: 18rem;">
