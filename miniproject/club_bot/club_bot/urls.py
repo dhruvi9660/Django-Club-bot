@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 from myapp import views as user_views
 
 urlpatterns=[ url(r'^$',user_views.index,name='index'),
-path('profile/', user_views.profile, name='profile'),
+
 path('register/',user_views.register,name='register'),
 path('login/', auth_views.LoginView.as_view(template_name='myapp/login.html'), name='login'),
 path('logout/', auth_views.LogoutView.as_view(template_name='myapp/logout.html'), name='logout'),
@@ -41,6 +41,7 @@ path('occasion_product/',user_views.occasion_product,name='occasion_product'),
 path('invoice/',user_views.GeneratePdf.as_view(),name='invoice'),
 path('gym_product/',user_views.gym_product,name='gym_product'),
 path('add_to_cart_occasion/(?P<item_id>[-\w]+)/$',user_views.add_to_cart_occasion,name='add_to_cart_occasion'),
+path('profile/', user_views.my_profile, name='profile'),
 path('', include('myapp.urls')),
 path('admin/', admin.site.urls), 
 
