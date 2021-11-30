@@ -86,7 +86,7 @@
           <td>{{ order.ref_code }}</td>
           <td>
         	{% for item in order.items.all %}
-        		{{ item.product.name }}
+        		{{ item.product.name }},
       		{% endfor %}
       	  </td>
           <td>${{ order.get_cart_total }}</td>
